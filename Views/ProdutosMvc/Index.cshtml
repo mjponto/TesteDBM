@@ -1,0 +1,45 @@
+﻿@model List<TesteDBM.Models.Produto>
+
+@{
+    ViewData["Title"] = "Listagem de Produtos (MVC)";
+}
+
+<h1>Produtos (MVC)</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Criar Novo Produto</a>
+</p>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Descricao</th>
+            <th>DataCadastro</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Nome</td>
+                <td>@p.Preco</td>
+                <td>@p.Descricao</td>
+                <td>@p.DataCadastro</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@p.Id" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum produto encontrado.</p>
+}

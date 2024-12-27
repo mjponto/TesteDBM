@@ -1,0 +1,23 @@
+﻿@model TesteDBM.Models.Produto
+
+@{
+    ViewData["Title"] = "Excluir Produto (MVC)";
+}
+
+<h1>Excluir Produto</h1>
+
+<div class="alert alert-warning">
+    <p>Tem certeza que deseja excluir o produto abaixo?</p>
+    <ul>
+        <li>Nome: @Model.Nome</li>
+        <li>Preço: @Model.Preco</li>
+        <li>Descrição: @Model.Descricao</li>
+        <li>Data de Cadastro: @Model.DataCadastro</li>
+    </ul>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
