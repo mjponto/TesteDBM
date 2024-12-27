@@ -10,7 +10,7 @@ Aplicação **ASP.NET Core** (versão .NET 8) feito para o teste da empresa DBM 
 - **Docker** para containerização
 ---
 Link do Teste: [Teste CRUD Evernote](https://lite.evernote.com/note/e8bb1b2d-c636-756a-72cd-20f4c9b11a73)
----
+
 ---
 
 ## Sumário
